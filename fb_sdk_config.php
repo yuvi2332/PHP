@@ -5,7 +5,7 @@
 
 
 #2. Include Autoload Files
-include_once 'lib/FBSDK/vendor/autoload.php';
+include_once 'FBSDK/vendor/autoload.php';
 
 #3. Create Facebook Object
 $fb= new \Facebook\Facebook([
