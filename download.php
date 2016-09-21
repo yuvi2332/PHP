@@ -21,13 +21,13 @@ $responseimage = $fb->get('/' . $_REQUEST['albumid'] . '/photos?fields=images', 
 $photos = $responseimage->getGraphEdge();
 
 
-mkdir("./lib/downloads/" . $_REQUEST['name'] . $cur_date);
+mkdir("./downloads/" . $_REQUEST['name'] . $cur_date);
 
 foreach ($photos as $photoitem) {
 $count++;
 $imgurl = $photoitem['images'][0]['source'];
 $data = file_get_contents($imgurl, false, stream_context_create($arrContextOptions));
-$fp = fopen('./lib/downloads/' . $_REQUEST['name'] . $cur_date . '/image' . $count . '.jpg', 'w');
+$fp = fopen('./downloads/' . $_REQUEST['name'] . $cur_date . '/image' . $count . '.jpg', 'w');
 fwrite($fp, $data);
 fclose($fp);
 }
@@ -37,7 +37,7 @@ $rootPath = realpath('./lib/downloads');
 
 // Initialize archive object
 $zip = new ZipArchive();
-$zip->open("./lib/zipfiles/" . $_REQUEST['name'] . $cur_date . ".zip", ZipArchive::CREATE | ZipArchive::OVERWRITE);
+$zip->open("./zipfiles/" . $_REQUEST['name'] . $cur_date . ".zip", ZipArchive::CREATE | ZipArchive::OVERWRITE);
 
 // Create recursive directory iterator
 /** @var SplFileInfo[] $files */
@@ -60,11 +60,11 @@ $zip->addFile($filePath, $relativePath);
 // Zip archive will be created only after closing object
 $zip->close();
 $filename = $_REQUEST['name'];
-$path = './lib/downloads/' . $_REQUEST['name'] . $cur_date;
+$path = './downloads/' . $_REQUEST['name'] . $cur_date;
 
 Delete($path);
 
-$zippath = './lib/zipfiles/' . $_REQUEST['name'] . $cur_date . '.zip';
+$zippath = './zipfiles/' . $_REQUEST['name'] . $cur_date . '.zip';
 
 header("Content-type: application/octet-stream");
 header("Content-Description: File Transfer");
