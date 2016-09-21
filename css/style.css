@@ -1,0 +1,77 @@
+body {
+    background-color: #EEEEEE;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+.sidebar {
+
+    box-shadow: 0 0 5px #1F1D28;
+    border-left: #1F1D28 2px;
+    float: left;
+    background-color: #212121;
+    width: 17%;
+    height: 697px;
+    position: fixed;
+
+}
+
+.profileinfo {
+    background-color: #FF9800;
+    margin-top: 80px;
+    height: 100px;
+    border-bottom: #F50004;
+    padding-left: 10px;
+    overflow: auto;
+}
+
+#profileimage {
+    width: 60px;
+    height: 60px;
+
+}
+
+.username {
+
+    width: 140px;
+    height: 90px;
+    margin-top: 15px;
+    margin-left: 70px;
+    position: absolute;
+    color: #FCF6F6;
+    font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 20.9px;
+}
+
+.clsprofileimage {
+
+    margin-top: 20px;
+    margin-left: 0px;
+    background-color: #F50004;
+    border-radius: 90px;
+    height: 60px;
+    width: 60px;
+}
+
+.content {
+    box-shadow: 0 0 7px #bbbbbb;
+    background-color: white;
+    height: auto;
+    width: 80%;
+    float: left;
+    position: relative;
+    left: 260px;
+    margin-top: 20px
+}
+
+#albumphotoes{
+
+    height: 100px;
+    width: 100px;
+}
